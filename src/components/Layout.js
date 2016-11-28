@@ -6,14 +6,19 @@ export default class Layout extends React.Component {
     return (
       <div className="app-container">
         <header>
-          <Link to="/">
-            <img className="logo" src="/img/logo-judo-heroes.png"/>
-          </Link>
+          Jonathan Gamble &amp; Kathleen McKee
         </header>
-        <div className="app-content">{this.props.children}</div>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/">Travel Info</Link>
+          <Link to="/">RSVP</Link>
+          <Link to="/">Contact</Link>
+          <Link to="/">Registry</Link>
+        </nav>
+        {this.props.children}
         <footer>
           <p>
-            This is a demo app to showcase universal rendering and routing with <strong>React</strong> and <strong>Express</strong>.
+            Site designed and built by <a href="http://www.jongamble.com">Jon Gamble</a>
           </p>
         </footer>
       </div>
