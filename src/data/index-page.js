@@ -1,3 +1,5 @@
+import invitationNames from './invitation-names';
+
 const indexData = {
     'header': {
         'location': 'Banchory, Scotland',
@@ -25,16 +27,16 @@ const indexData = {
     },
     'travel': [
         {
-            'headline': '',
-            'copy': ''
+            'headline': 'Travel 1',
+            'copy': 'This is travel 1 copy'
         },
         {
-            'headline': '',
-            'copy': ''
+            'headline': 'Travel 2',
+            'copy': 'This is travel 2 copy'
         },
         {
-            'headline': '',
-            'copy': ''
+            'headline': 'Travel 3',
+            'copy': 'This is travel 3 copy'
         }
     ],
     'events': [
@@ -54,20 +56,7 @@ const indexData = {
     'rsvp': {
         'headline': '',
         'copy': '',
-        'invitationNames': [
-            {
-                'name': '',
-                'numberInvited': 1
-            },
-            {
-                'name': '',
-                'numberInvited': 1
-            },
-            {
-                'name': '',
-                'numberInvited': 1
-            }
-        ],
+        'invitationNames': invitationNames,
         'formFields': [
             'name',
             'email',
@@ -77,30 +66,30 @@ const indexData = {
     },
     'contact': [
         {
-            'name': '',
-            'phone': '',
-            'email': ''
+            'name': 'Jon Gamble',
+            'phone': '919.610.5206',
+            'email': 'jon@jongamble.com'
         },
         {
-            'name': '',
-            'phone': '',
-            'email': ''
+            'name': 'Kate McKee',
+            'phone': '919.225.7922',
+            'email': 'katemckee90@gmail.com'
         }
     ],
     'registry': [
         {
-            'store': '',
-            'link': '',
+            'store': 'Amazon',
+            'link': 'http://www.amazom.com',
             'image': ''
         },
         {
-            'store': '',
-            'link': '',
+            'store': 'Crate and Barrel',
+            'link': 'http://www.crateandbarrel.com',
             'image': ''
         },
         {
-            'store': '',
-            'link': '',
+            'store': 'Pottery Barn',
+            'link': 'http://www.potterybarn.com',
             'image': ''
         }
     ],
