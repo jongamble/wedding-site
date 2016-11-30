@@ -5,8 +5,8 @@ function getDevTool() {
     if (process.env.NODE_ENV !== 'production') {
         return 'source-map'; //enables source map
     }
-    
-    return false; 
+
+    return false;
 }
 
 module.exports = {
