@@ -4,35 +4,38 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test",
-    "build": "./node_modules/webpack/bin/webpack.js -p",
+    "build": "gulp build",
     "start": "node_modules/.bin/babel-node --presets 'react,es2015' src/server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jongamble/wedding-site.git"
   },
-  "author": "",
+  "author": "Jon Gamble",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jongamble/wedding-site/issues"
   },
   "homepage": "https://github.com/jongamble/wedding-site#readme",
-  "dependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-core": "^6.13.2",
-    "babel-preset-es2015": "^6.13.2",
-    "babel-preset-react": "^6.11.1",
-    "ejs": "^2.5.2",
-    "express": "^4.14.0",
+  "devDependencies": {
+    "css-loader": "^0.12.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.9.1",
+    "http-server": "^0.8.0",
+    "jsx-loader": "^0.13.2",
+    "node-libs-browser": "^0.5.0",
+    "node-sass": "^2.1.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-router": "^2.6.1"
+    "react-hot-loader": "^1.3.0",
+    "sass-loader": "^0.5.0",
+    "style-loader": "^0.12.2",
+    "webpack": "^1.9.5",
+    "webpack-dev-server": "^1.8.2"
   },
-  "devDependencies": {
-    "babel-loader": "^6.2.7",
-    "http-server": "^0.9.0",
-    "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2"
+  "dependencies": {
+    "babel-core": "^5.3.3",
+    "babel-loader": "^5.0.0"
   }
 }

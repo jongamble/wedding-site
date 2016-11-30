@@ -1,21 +1,32 @@
 const webpack = require('webpack');
 const path = require('path');
 
+function getDevTool() {
+    if (process.env.NODE_ENV !== 'production') {
+        return 'source-map'; //enables source map
+    }
+    
+    return false; 
+}
+
 module.exports = {
   entry: path.join(__dirname, 'src', 'app-client.js'),
   output: {
     path: path.join(__dirname, 'src', 'static', 'js'),
     filename: 'bundle.js'
   },
+  devtool: getDevTool(),
   module: {
-    loaders: [{
-      test: path.join(__dirname, 'src'),
-      loader: ['babel-loader'],
-      query: {
-        cacheDirectory: 'babel_cache',
-        presets: ['react', 'es2015']
+    loaders: [
+      {
+        test: path.join(__dirname, 'src'),
+        loader: ['babel-loader'],
+        query: {
+          cacheDirectory: 'babel_cache',
+          presets: ['react', 'es2015']
+        }
       }
-    }]
+    ]
   },
   plugins: [
     new webpack.DefinePlugin({
