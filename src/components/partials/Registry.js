@@ -6,7 +6,7 @@ export default class Registry extends Component {
         const registryData = this.props.data;
 
         return registryData ? (
-            <ul className="travel-list">
+            <ul className="registry-list">
                 {this.props.data.map((item, index) =>
                     <RegistryItem
                         {...item}
@@ -19,9 +19,9 @@ export default class Registry extends Component {
 
     render() {
         return (
-            <section className="_section travel">
+            <section className="_section registry">
                 <div className="_section--container">
-                    <h1 className="section-heading">Wedding Registry</h1>
+                    <h1 className="_section-heading">Wedding Registry</h1>
                     {this.getRegistryContent()}
                 </div>
             </section>

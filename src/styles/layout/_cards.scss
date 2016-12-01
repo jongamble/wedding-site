@@ -1,0 +1,28 @@
+%third-card {
+	border-bottom: 1px solid $gray;
+	width: 100%;
+	margin-bottom: 22px;
+	padding: 0 10px;
+
+	@include mq(720px) {
+		width: 30%;
+		margin: 15px 1.5%;
+		border-bottom: none;
+	}
+
+	&:last-of-type {
+		border-bottom: none;
+	}
+}
+
+%half-card {
+	border-bottom: 1px solid $gray;
+	width: 100%;
+	margin-bottom: 22px;
+	padding: 0 10px;
+
+	@include mq(720px) {
+		width: 30%;
+		margin: 0 4%;
+	}
+}

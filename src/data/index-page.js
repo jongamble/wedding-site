@@ -4,9 +4,9 @@ const indexData = {
     'header': {
         'location': 'Banchory, Scotland',
         'date': 'July 12, 2017',
-        'leftName': 'Jon Gamble',
-        'rightName': 'Kate McKee',
-        'image': ''
+        'leftName': 'Jonathan Gamble',
+        'rightName': 'Kathleen McKee',
+        'image': 'raemoir-watercolor.png'
     },
     'about': {
         'bride': {
@@ -22,35 +22,43 @@ const indexData = {
         'couple': {
             'headline': '',
             'copy': '',
-            'image': ''
+            'image': 'engagement1.jpg'
         }
     },
     'travel': [
         {
             'headline': 'Travel 1',
-            'copy': 'This is travel 1 copy'
+            'copy': 'This is travel 1 copyThis is travel 1 copyThis is travel 1 copyThis is travel 1 copyThis is travel 1 copy'
         },
         {
             'headline': 'Travel 2',
-            'copy': 'This is travel 2 copy'
+            'copy': 'This is travel 2 copyThis is travel 2 copyThis is travel 2 copyThis is travel 2 copyThis is travel 2 copy'
         },
         {
             'headline': 'Travel 3',
-            'copy': 'This is travel 3 copy'
+            'copy': 'This is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copy'
+        },
+        {
+            'headline': 'Travel 3',
+            'copy': 'This is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copy'
+        },
+        {
+            'headline': 'Travel 3',
+            'copy': 'This is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copy'
         }
     ],
     'events': [
         {
-            'headline': '',
-            'copy': ''
+            'headline': 'Travel 1',
+            'copy': 'This is travel 1 copyThis is travel 1 copyThis is travel 1 copyThis is travel 1 copyThis is travel 1 copy'
         },
         {
-            'headline': '',
-            'copy': ''
+            'headline': 'Travel 2',
+            'copy': 'This is travel 2 copyThis is travel 2 copyThis is travel 2 copyThis is travel 2 copyThis is travel 2 copy'
         },
         {
-            'headline': '',
-            'copy': ''
+            'headline': 'Travel 3',
+            'copy': 'This is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copy'
         }
     ],
     'rsvp': {
@@ -80,17 +88,17 @@ const indexData = {
         {
             'store': 'Amazon',
             'link': 'http://www.amazom.com',
-            'image': ''
+            'image': 'amazon-logo.png'
         },
         {
             'store': 'Crate and Barrel',
             'link': 'http://www.crateandbarrel.com',
-            'image': ''
+            'image': 'crate-and-barrel-logo.png'
         },
         {
             'store': 'Pottery Barn',
             'link': 'http://www.potterybarn.com',
-            'image': ''
+            'image': 'pottery-barn-logo.png'
         }
     ],
     'bridalParty': {

@@ -1,12 +1,12 @@
 'use strict';
- 
+
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var gutil = require("gulp-util");
 var webpack = require("webpack");
 var webpackConfig = require("./webpack.config.js");
 var sourcemaps = require('gulp-sourcemaps');
- 
+
 gulp.task('sass', function () {
  return gulp.src('./src/**/*.scss')
   .pipe(sourcemaps.init())
@@ -14,14 +14,12 @@ gulp.task('sass', function () {
   .pipe(sourcemaps.write())
   .pipe(gulp.dest('./src/static'));
 });
- 
+
 gulp.task('sass:watch', function () {
-  gulp.watch('./sass/**/*.scss', ['sass']);
+  gulp.watch('./src/**/*.scss', ['sass']);
 });
 
 
-// Production build
-gulp.task("build", ["webpack:build", "sass"]);
 
 gulp.task("webpack:build", function(callback) {
 	// modify some webpack config options
@@ -46,3 +44,6 @@ gulp.task("webpack:build", function(callback) {
 		callback();
 	});
 });
+
+// Production build
+gulp.task("build", ["webpack:build", "sass"]);

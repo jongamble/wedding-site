@@ -19,6 +19,7 @@
   "homepage": "https://github.com/jongamble/wedding-site#readme",
   "devDependencies": {
     "babel-loader": "^6.2.8",
+    "breakpoint-sass": "^2.7.0",
     "css-loader": "^0.12.0",
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.2",

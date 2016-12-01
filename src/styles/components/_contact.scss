@@ -1,0 +1,42 @@
+.contact-list {
+	@include mq(720px) {
+		display: flex;
+		justify-content: center;
+	}
+
+	&--item {
+		@extend %half-card;
+		@include mq(720px) {
+			padding: 25px 0;
+			border: 1px solid $sage;
+		}
+	}
+
+	&--name {
+		@extend %open-sans;
+		text-align: center;
+		color: $dark-gray;
+		font-weight: 400;
+		font-size: 24px;
+		margin-bottom: 15px;
+	}
+
+	&--phone,
+	&--email {
+		@extend %open-sans;
+		color: $dark-gray;
+		font-size: 16px;
+		line-height: 22px;
+		margin-bottom:10px;
+		text-align: center;
+		display: block;
+	}
+
+	&--email {
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

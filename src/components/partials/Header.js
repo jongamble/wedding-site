@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from '../helpers/Image';
 
 export default class Header extends React.Component {
     render() {
@@ -8,8 +9,12 @@ export default class Header extends React.Component {
                     <h2 className="header-location">{this.props.location}</h2>
                     <div className="header-name-container">
                         <h1 className="header-name">{this.props.leftName}</h1>
-                        <img className="header-image" src={this.props.image} />
                         <h1 className="header-name">{this.props.rightName}</h1>
+                        <Image
+                            class="header-image"
+                            image={this.props.image}
+                            alt="Raemoir House Hotel"
+                        />
                     </div>
                     <h2 className="header-date">{this.props.date}</h2>
                 </div>

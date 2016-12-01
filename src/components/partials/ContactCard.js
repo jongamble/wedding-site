@@ -4,7 +4,7 @@ export default class ContactCard extends Component {
     render() {
         return (
             <li key={"contact-" + this.props.index} className="contact-list--item">
-                <h2 className="contact-list--name">{this.props.headline}</h2>
+                <h2 className="contact-list--name">{this.props.name}</h2>
                 <p className="contact-list--phone">{this.props.phone}</p>
                 <a
                     className="contact-list--email"

@@ -8,8 +8,7 @@ export default class Layout extends React.Component {
     return (
       <div className="app-container">
         <Header {...data.header} />
-        <nav>
-          <Link to="/">Home</Link>
+        <nav className="nav">
           <Link to="/">Travel Info</Link>
           <Link to="/">RSVP</Link>
           <Link to="/">Contact</Link>
