@@ -21,7 +21,9 @@ export default class Travel extends Component {
         return (
             <section className="_section travel">
                 <div className="_section--container">
-                    <h1 className="_section-heading">Travel and Accommodations</h1>
+                    <h1 className="_section-heading">
+                        <span className="_section-heading--text">Travel and Accommodations</span>
+                    </h1>
                     {this.getTravelContent()}
                 </div>
             </section>

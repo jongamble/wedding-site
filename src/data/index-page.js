@@ -62,14 +62,40 @@ const indexData = {
         }
     ],
     'rsvp': {
-        'headline': '',
-        'copy': '',
+        'headline': 'RSVP',
+        'copy': 'This is some placeholder rsvp copy that will tell the user how to access and how we are so excited that they are coming to the wedding. This will be about 2-3 short sentences and really serve no purpose other than window dressing.',
         'invitationNames': invitationNames,
         'formFields': [
-            'name',
-            'email',
-            'food',
-            'attending'
+            {
+                'name': 'name',
+                'type': 'text',
+                'label': 'Name'
+            },
+            {
+                'name': 'email',
+                'type': 'text',
+                'label': 'Email Address'
+            },
+/*            {
+                'name': 'food',
+                'type': 'select',
+                'label': 'Wedding Reception Dinner Option',
+                'options': [
+                    {'value': 'chicken', 'label': 'Chicken'},
+                    {'value': 'fish', 'label': 'Fish'},
+                    {'value': 'vegetarian', 'label': 'Vegetarian'}
+                ]
+            },
+*/
+            {
+                'name': 'attending',
+                'type': 'select',
+                'label': 'Will this person be attending',
+                'options': [
+                    {'value': 'yes', 'label': 'Yes'},
+                    {'value': 'no', 'label': 'No'}
+                ]
+            }
         ]
     },
     'contact': [

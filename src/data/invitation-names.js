@@ -1,15 +1,15 @@
 const invitationNames = [
     {
-        'name': '',
-        'numberInvited': 1
+        'name': 'John McKee',
+        'numberInvited': 4
     },
     {
-        'name': '',
-        'numberInvited': 1
+        'name': 'Jon Gamble',
+        'numberInvited': 2
     },
     {
-        'name': '',
-        'numberInvited': 1
+        'name': 'Bob Gamble',
+        'numberInvited': 4
     }
 ];
 
