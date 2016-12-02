@@ -1,0 +1,142 @@
+.rsvp {
+
+	&-copy {
+		@extend %open-sans;
+		font-size:16px;
+		line-height: 1.4;
+		color: $gray;
+		text-align: center;
+	}
+
+	&-initial {
+		max-width: 400px;
+		margin: 20px auto;
+
+		&--copy {
+			@extend %open-sans;
+			font-size:14px;
+			line-height: 1.4;
+			color: $gray;
+		}
+
+		&--textbox {
+			@extend %open-sans;
+			font-size: 16px;
+			color:$dark-gray;
+			width: 100%;
+			display: block;
+			padding: 3px 10px;
+			margin: 5px 0 0;
+
+			&:active,
+			&:focus {
+				outline: none;
+			}
+		}
+
+		&--results-box {
+			background: $light-sage;
+			border: 1px solid $gray;
+
+			li {
+				border-bottom: 1px solid $gray;
+
+				&:last-of-type {
+					border-bottom: none;
+				}
+
+				a {
+					@extend %open-sans;
+					font-size: 16px;
+					color: $dark-gray;
+					text-decoration: none;
+					display: block;
+					padding: 10px;
+					width:100%;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+
+	&-cards {
+		&--container {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		&--item {
+			@extend %third-card;
+			@include mq(720px) {
+				padding: 25px 20px;
+				border: 1px solid $sage;
+
+				&:last-of-type {
+					border-bottom: 1px solid $sage;
+				}
+			}
+		}
+
+		&--label {
+			@extend %open-sans;
+			display: block;
+			font-size: 16px;
+			color:$dark-gray;
+		}
+
+		&--textbox {
+			@extend %open-sans;
+			font-size: 16px;
+			color:$dark-gray;
+			width: 100%;
+			display: block;
+			padding: 3px 10px;
+			margin: 5px 0 15px;
+
+			&:active,
+			&:focus {
+				outline: none;
+			}
+		}
+
+		&--select {
+			@extend %open-sans;
+			font-size: 16px;
+			color:$dark-gray;
+			width: 100%;
+			display: block;
+			padding: 3px 10px;
+			margin: 5px 0 15px;
+
+			&:active,
+			&:focus {
+				outline: none;
+			}
+		}
+
+		&--button {
+			@extend %open-sans;
+			display: block;
+			margin: 20px auto;
+			max-width: 200px;
+			padding: 7px 20px;
+			font-size: 20px;
+			color: $gray;
+			text-align: center;
+			background: $light-sage;
+			border: 1px solid $sage;
+			transition: .2s background;
+
+			&:hover,
+			&:focus {
+				cursor: pointer;
+				background: darken($light-sage, 7%);
+				outline: none;
+			}
+		}
+	}
+}

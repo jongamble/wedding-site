@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+var Typeahead = require('react-typeahead-fix').Typeahead;
 
 export default class RsvpInitial extends Component {
-    getInitialState() {
-        return{};
-    }
-
     render() {
         return(
-            <input className="rsvp-textbox" type="text" ref={(c) => this.name = c} name="name"/>
-            <button type="button" onClick={this.props.showInvitees.bind(this)} className="rsvp-show-button">
-                Submit
-            </button>
+            <div className="rsvp-initial">
+                <p className="rsvp-initial--copy">Please type the name on your invitation.</p>
+                <Typeahead
+                    options={this.props.nameList}
+                    onOptionSelected={this.props.onChange}
+                    maxVisible={6}
+                    customClasses={{input: 'rsvp-initial--textbox', results: 'rsvp-initial--results-box'}}
+                />
+            </div>
         );
     }
 }

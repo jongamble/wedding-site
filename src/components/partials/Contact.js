@@ -21,7 +21,9 @@ export default class Contact extends Component {
         return (
             <section className="_section contact`">
                 <div className="_section--container">
-                    <h1 className="_section-heading">Contact</h1>
+                    <h1 className="_section-heading">
+                        <span className="_section-heading--text">Contact</span>
+                    </h1>
                     {this.getContactContent()}
                 </div>
             </section>
