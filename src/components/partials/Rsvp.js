@@ -38,8 +38,8 @@ export default class Rsvp extends Component {
         state['inviteNumber'] = _.find(invitationNames, { 'name': name}).numberInvited;
         this.setState(state);
     }
+
     onSecondaryChange(e) {
-        console.log(e.target);
         var state = {};
         state[e.target.name] =  _.trim(e.target.value);
         this.setState(state);
