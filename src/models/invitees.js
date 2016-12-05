@@ -2,9 +2,11 @@ import mongoose from 'mongoose';
 
 const Schema = mongoose.Schema;
 
-const Invitee = new Schema({
-    invitationName : String,
-    name  		   : String,
-    email  		   : String,
-    attending  	   : String
+const inviteeSchema = new Schema({
+    inviteName : String,
+    name  	   : String,
+    email  	   : String,
+    attending  : String
 });
+
+export default inviteeSchema;

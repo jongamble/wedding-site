@@ -1,5 +1,4 @@
 import React, { Component }    from 'react';
-import XMLHttpRequestPromise   from 'xhr-promise';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import invitationNames         from '../../data/invitation-names';
 import RsvpInitial             from './RsvpInitial';
@@ -24,7 +23,7 @@ export default class Rsvp extends Component {
         e.preventDefault();
         const _this = this;
         let state = this.state,
-            dataPush = {};
+            dataPush = [];
 
         for(let i = 0; i < state.inviteNumber; i++) {
             dataPush[i] = {'inviteName': state.inviteName};
@@ -45,10 +44,11 @@ export default class Rsvp extends Component {
 
         fetch(new Request('/api', myInit))
         .then(function(response) {
-            return response.json()
-          }).then(function(json) {
-            console.log('parsed json', json)
-            _this.setState({rsvpSubmitted: true});
+            if(response.ok){
+                _this.setState({rsvpSubmitted: true});
+            } else {
+                _this.setState({rsvpError: true});
+            }
           }).catch(function(ex) {
             console.log('parsing failed', ex)
             _this.setState({rsvpError: true});
@@ -95,7 +95,8 @@ export default class Rsvp extends Component {
     errorFrame() {
         return (this.state.rsvpError) ? (
                 <div className="rsvp-error">
-                    There was an error with your submission. Please try again.
+                    <h2 className="rsvp-error--header">Error!</h2>
+                    <p className="rsvp-error--copy">There was an error with your submission. Please try again.</p>
                 </div>
             )
             : null;

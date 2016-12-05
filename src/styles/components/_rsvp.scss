@@ -139,4 +139,44 @@
 			}
 		}
 	}
+
+	&-submitted {
+		width: 60%;
+		margin: 40px auto 20px;
+		border: 1px solid $sage;
+		padding: 15px 25px;
+
+		&--header {
+			@extend %tangerine;
+			color: $sage;
+			font-size: 50px;
+			margin-bottom:10px;
+		}
+
+		&--copy {
+			@extend %open-sans;
+			color: $gray;
+			font-size: 16px;
+		}
+	}
+	&-error {
+		width: 60%;
+		margin: 40px auto 20px;
+		border: 1px solid #e57f7f;
+		padding: 15px 25px;
+		background: #f4cccc;
+
+		&--header {
+			@extend %tangerine;
+			color: #e57f7f;
+			font-size: 50px;
+			margin-bottom:10px;
+		}
+
+		&--copy {
+			@extend %open-sans;
+			color: $dark-gray;
+			font-size: 16px;
+		}
+	}
 }

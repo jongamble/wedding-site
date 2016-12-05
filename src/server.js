@@ -4,10 +4,12 @@ import Express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import React from 'react';
+import _ from 'lodash';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import routes from './routes';
 import NotFoundPage from './components/NotFoundPage';
+import inviteeSchema from './models/invitees';
 
 // initialize the server and configure support for ejs templates
 const app = new Express();
@@ -27,20 +29,41 @@ const mongooseOptions = {
 };
 
 mongoose.connect('mongodb://138.197.36.27/guestList', mongooseOptions);
+mongoose.Promise = require('bluebird');
 
 app.post('/api', (req, res) => {
-  console.log(req.body);
-  const sub = req.body;
-  var Person = mongoose.model('Invitee', inviteeSchema);
+  const sub = req.body,
+    conn = mongoose.connection,
+    Invitee = mongoose.model('Invitee', inviteeSchema);
 
-  sub.map(sub, (invite) => {
-    if(invite.name.length > 0) {
+  let validData = false;
 
+  function sanitizeString(str){
+      str = str.replace(/[^a-z0-9áéíóúñü \.,_-]/gim,"");
+      return str.trim();
+  }
+
+  sub.map((invite) => {
+    if(invite.name) {
+      let sanitizedObj = {};
+      Object.keys(invite).forEach(function(key) {
+        sanitizedObj[key] = sanitizeString(invite[key]);
+      });
+      let inviteObj = new Invitee(sanitizedObj);
+      inviteObj.save(function (err, invitee) {
+        if (err) return console.error(err);
+      });
+      validData = true;
     }
   })
-  res.send(req.body);
 
-  res.status(500).send('Something broke!')
+  if(validData) {
+    res.status(200).send('OK');
+  } else {
+    res.status(400).send('Invalid data');
+  }
+
+  // res.status(500).send('Something broke!')
 });
 
 // universal routing and rendering
