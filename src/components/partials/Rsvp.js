@@ -1,4 +1,5 @@
 import React, { Component }    from 'react';
+import XMLHttpRequestPromise   from 'xhr-promise';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import invitationNames         from '../../data/invitation-names';
 import RsvpInitial             from './RsvpInitial';
@@ -10,7 +11,9 @@ export default class Rsvp extends Component {
         super(props);
         this.state = {
             inviteName: '',
-            inviteNumber: ''
+            inviteNumber: '',
+            rsvpError: false,
+            rsvpSubmitted: false
         };
         this.onInitialChange = this.onInitialChange.bind(this);
         this.onSecondaryChange = this.onSecondaryChange.bind(this);
@@ -19,17 +22,38 @@ export default class Rsvp extends Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let state = this.state;
-        console.log('Submit Current State');
-        console.log(state);
+        const _this = this;
+        let state = this.state,
+            dataPush = {};
 
-        // if inviteName is present in the data, return the invite Number associated with it, else return false and proceed.
+        for(let i = 0; i < state.inviteNumber; i++) {
+            dataPush[i] = {'inviteName': state.inviteName};
+            this.props.formFields.forEach((field) => {
+                dataPush[i][field.name] = state[field.name + '-' + i];
+            });
 
-        // newState.inviteName.push(this.refs.inputText.value);
-        // newState.invitees.push(
-        //     <RsvpCards amount={newState.inviteNumber} name={newState.inviteName} />
-        // );
-        // this.setState(newState).forceUpdate();
+        }
+
+        // Create an empty Headers instance
+        var headers = new Headers();
+        headers.set('Content-Type', 'application/json');
+
+        var myInit = { method: 'post',
+                       headers: headers,
+                       body: JSON.stringify(dataPush)
+                   };
+
+        fetch(new Request('/api', myInit))
+        .then(function(response) {
+            return response.json()
+          }).then(function(json) {
+            console.log('parsed json', json)
+            _this.setState({rsvpSubmitted: true});
+          }).catch(function(ex) {
+            console.log('parsing failed', ex)
+            _this.setState({rsvpError: true});
+          })
+
     }
 
     onInitialChange(name) {
@@ -68,6 +92,15 @@ export default class Rsvp extends Component {
         return cards;
     }
 
+    errorFrame() {
+        return (this.state.rsvpError) ? (
+                <div className="rsvp-error">
+                    There was an error with your submission. Please try again.
+                </div>
+            )
+            : null;
+    }
+
     renderInitial() {
         return (!this.state.inviteName.length) ? (
             <RsvpInitial
@@ -76,12 +109,20 @@ export default class Rsvp extends Component {
                 nameList={this.getInvitationList()}
             />
         ) : (
+            (!this.state.rsvpSubmitted) ? (
                 <form method="post" name="rsvp-cards" className="rsvp-cards" onSubmit={this.handleSubmit}>
+                    {this.errorFrame()}
                     <div className="rsvp-cards--container">
                         {this.renderCards()}
                     </div>
                     <button type="submit" name="submit" className="rsvp-cards--button">Submit</button>
                 </form>
+            ) : (
+                <div className="rsvp-submitted">
+                    <h2 className="rsvp-submitted--header">Success!</h2>
+                    <p className="rsvp-submitted--copy">Your response has been recorded. We look forward to seeing you soon!</p>
+                </div>
+            )
         );
     }
 

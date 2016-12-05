@@ -1,6 +1,8 @@
 import path from 'path';
 import { Server } from 'http';
 import Express from 'express';
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
@@ -15,6 +17,31 @@ app.set('views', path.join(__dirname, 'views'));
 
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'static')));
+
+app.use(bodyParser.json());
+
+
+const mongooseOptions = {
+  user: 'weddingAdmin',
+  pass: 'j.Gamb1e89'
+};
+
+mongoose.connect('mongodb://138.197.36.27/guestList', mongooseOptions);
+
+app.post('/api', (req, res) => {
+  console.log(req.body);
+  const sub = req.body;
+  var Person = mongoose.model('Invitee', inviteeSchema);
+
+  sub.map(sub, (invite) => {
+    if(invite.name.length > 0) {
+
+    }
+  })
+  res.send(req.body);
+
+  res.status(500).send('Something broke!')
+});
 
 // universal routing and rendering
 app.get('*', (req, res) => {
