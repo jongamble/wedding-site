@@ -7,7 +7,7 @@
     "build": "gulp build",
     "start": "node_modules/.bin/babel-node --presets 'react,es2015' src/server.js",
     "prod": "nodemon src/server.js --exec babel-node --presets react,es2015",
-    "prod-build": "babel src -d dist --presets react,es2015",
+    "prod-build": "babel src -d dist --presets react,es2015 --ignore bundle.js",
     "serve": "node dist/server.js"
   },
   "repository": {
