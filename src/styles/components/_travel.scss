@@ -20,12 +20,8 @@
 		@extend %open-sans;
 		color: $dark-gray;
 		font-size: 16px;
-		line-height: 22px;
+		line-height: 24px;
 		margin-bottom:22px;
 		text-align: center;
-
-		@include mq(720px) {
-			text-align: left;
-		}
 	}
 }
