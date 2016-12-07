@@ -105,17 +105,17 @@ const indexData = {
     'registry': [
         {
             'store': 'Amazon',
-            'link': 'http://www.amazom.com',
+            'link': 'https://www.amazon.com/wedding/kate-mckee-jon-gamble-portree-july-2017/registry/1BSHUDA6FCK2X',
             'image': 'amazon-logo.png'
         },
         {
             'store': 'Crate and Barrel',
-            'link': 'http://www.crateandbarrel.com',
+            'link': 'http://www.crateandbarrel.com/gift-registry/kate-mckee-and-jon-gamble/r5595516',
             'image': 'crate-and-barrel-logo.png'
         },
         {
             'store': 'Pottery Barn',
-            'link': 'http://www.potterybarn.com',
+            'link': 'http://www.potterybarn.com/registry/3899708/registry-list.html?cm_ven=WedCh&bnrid=3340801&cm_ite=GiftGiver&cm_pla=WCSearchResults&cm_cat=Registry',
             'image': 'pottery-barn-logo.png'
         }
     ],
