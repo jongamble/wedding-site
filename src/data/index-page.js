@@ -27,24 +27,16 @@ const indexData = {
     },
     'travel': [
         {
-            'headline': 'Travel 1',
-            'copy': 'This is travel 1 copyThis is travel 1 copyThis is travel 1 copyThis is travel 1 copyThis is travel 1 copy'
+            'headline': 'Arrival by Air',
+            'copy': 'There are a few airports, somewhat locally, that you can fly into - Aberdeen airport and Edinburgh airport. For those around RDU, it looks like most flights go through London Heathrow (LHR) or Boston and Dublin.'
         },
         {
-            'headline': 'Travel 2',
-            'copy': 'This is travel 2 copyThis is travel 2 copyThis is travel 2 copyThis is travel 2 copyThis is travel 2 copy'
+            'headline': 'Arrival by Train',
+            'copy': 'For those wanting to fly into a larger airport farther from Aberdeen, the rail system is a great opportunity to see the country and get closer to the venue. The closest train stations to the venue are Stonehaven & Aberdeen.'
         },
         {
-            'headline': 'Travel 3',
-            'copy': 'This is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copy'
-        },
-        {
-            'headline': 'Travel 3',
-            'copy': 'This is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copy'
-        },
-        {
-            'headline': 'Travel 3',
-            'copy': 'This is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copyThis is travel 3 copy'
+            'headline': 'Accommodations',
+            'copy': 'We are in the final stages of preparing a plan for all accommodations for the guests for the 2 days in Banchory. Most of the guests will be staying at the Raemoir House Hotel, while a few will stay at the nearby Banchory Lodge Hotel or Tor-Na-Coille Country House Hotel.'
         }
     ],
     'events': [
@@ -63,7 +55,7 @@ const indexData = {
     ],
     'rsvp': {
         'headline': 'RSVP',
-        'copy': 'This is some placeholder rsvp copy that will tell the user how to access and how we are so excited that they are coming to the wedding. This will be about 2-3 short sentences and really serve no purpose other than window dressing.',
+        'copy': 'We are so excited to have you join us on our special day. At your earliest convience, please find your name in the text box below and let us know if you will be in attendance. See you in Scotland!',
         'invitationNames': invitationNames,
         'formFields': [
             {
