@@ -19,7 +19,7 @@ export default class Contact extends Component {
 
     render() {
         return (
-            <section className="_section contact`">
+            <section className="_section contact" id="contact">
                 <div className="_section--container">
                     <h1 className="_section-heading">
                         <span className="_section-heading--text">Contact</span>
