@@ -129,7 +129,7 @@ export default class Rsvp extends Component {
 
     render() {
         return (
-            <section className="_section rsvp`">
+            <section className="_section rsvp" id="rsvp">
                 <div className="_section--container">
                     <h1 className="_section-heading">
                         <span className="_section-heading--text">{this.props.headline}</span>

@@ -19,7 +19,7 @@ export default class Registry extends Component {
 
     render() {
         return (
-            <section className="_section registry">
+            <section className="_section registry" id="registry">
                 <div className="_section--container">
                     <h1 className="_section-heading">
                         <span className="_section-heading--text">Wedding Registry</span>

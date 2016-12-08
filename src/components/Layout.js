@@ -1,18 +1,40 @@
 import React  from 'react';
-import {Link} from 'react-router';
+import Scroll from 'react-scroll';
 import Header from './partials/Header';
-import data from '../data/index-page';
+import data   from '../data/index-page';
+
+const Link   = Scroll.Link,
+  scroll     = Scroll.animateScroll,
+  Events     = Scroll.Events,
+  scrollSpy  = Scroll.scrollSpy;
 
 export default class Layout extends React.Component {
+  componentDidMount() {
+    Events.scrollEvent.register('begin', function(to, element) {
+      console.log("begin", arguments);
+    });
+
+    Events.scrollEvent.register('end', function(to, element) {
+      console.log("end", arguments);
+    });
+
+    scrollSpy.update();
+
+  }
+
+  componentWillUnmount() {
+      Events.scrollEvent.remove('begin');
+      Events.scrollEvent.remove('end');
+  }
   render() {
     return (
       <div className="app-container">
         <Header {...data.header} />
         <nav className="nav">
-          <Link to="/">Travel Info</Link>
-          <Link to="/">RSVP</Link>
-          <Link to="/">Contact</Link>
-          <Link to="/">Registry</Link>
+          <Link to="travel" spy={true} smooth={true} duration={500}>Travel Info</Link>
+          <Link to="rsvp" spy={true} smooth={true} duration={500}>RSVP</Link>
+          <Link to="contact" spy={true} smooth={true} duration={500}>Contact</Link>
+          <Link to="registry" spy={true} smooth={true} duration={500}>Registry</Link>
         </nav>
         {this.props.children}
         <footer className="footer">

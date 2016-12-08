@@ -19,7 +19,7 @@ export default class Travel extends Component {
 
     render() {
         return (
-            <section className="_section travel">
+            <section className="_section travel" id="travel">
                 <div className="_section--container">
                     <h1 className="_section-heading">
                         <span className="_section-heading--text">Travel and Accommodations</span>

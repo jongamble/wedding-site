@@ -55,6 +55,7 @@
     "react-addons-css-transition-group": "^15.4.1",
     "react-dom": "^15.3.2",
     "react-router": "^2.6.1",
+    "react-scroll": "^1.4.4",
     "react-typeahead-fix": "^2.0.0-alpha.5"
   }
 }
